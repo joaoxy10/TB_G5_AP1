@@ -1,0 +1,193 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border-bottom: 0.0625rem solid #e0e0e0;
+  margin-left: 4rem;
+  position: relative;
+}
+
+header h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Sidebar Styles */
+aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 4rem;
+  height: 100vh;
+  background-color: #fff;
+  border-right: 0.0625rem solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  gap: 1rem;
+  z-index: 100;
+}
+
+aside p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+aside a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  transition: background-color 0.2s ease;
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
+}
+
+aside a:hover {
+  background-color: #f0f0f0;
+}
+
+aside img {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+/* Main Content Styles */
+main {
+  margin-left: 4rem;
+  padding: 1.5rem;
+  max-width: 50rem;
+}
+
+/* Style the month heading as a green search bar */
+main h2 {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 0.875rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main h2 em {
+  font-style: normal;
+}
+
+main h2::after {
+  content: "🔍";
+  font-size: 1.125rem;
+}
+
+/* Style each paragraph as a card with green accent bar */
+main p {
+  background-color: #fff;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 0.9375rem;
+  color: #333;
+}
+
+/* Add green accent bar on the right side of each card */
+main p::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 3rem;
+  background-color: #4caf50;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+main p:hover {
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.12);
+}
+
+/* Responsive Design */
+@media (max-width: 48rem) {
+  aside {
+    width: 3.5rem;
+  }
+
+  header {
+    margin-left: 3.5rem;
+  }
+
+  main {
+    margin-left: 3.5rem;
+    padding: 1rem;
+  }
+
+  header {
+    padding: 1rem;
+  }
+
+  main p {
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  main p::after {
+    width: 2.5rem;
+  }
+
+  main h2 {
+    padding: 0.75rem 1rem;
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  aside {
+    width: 3rem;
+  }
+
+  header {
+    margin-left: 3rem;
+  }
+
+  main {
+    margin-left: 3rem;
+    padding: 0.75rem;
+  }
+
+  aside img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  main p {
+    padding: 0.875rem 1rem;
+  }
+
+  main p::after {
+    width: 2rem;
+  }
+}
