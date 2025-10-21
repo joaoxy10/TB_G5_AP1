@@ -47,13 +47,13 @@ header p {
 
 
 header p::before {
-    content: "\2630"; /* ☰ */
+    content: "\2630"; 
     font-size: 18px;
 }
 
 
 header p::after {
-    content: "\1F50D"; /* 🔍 */
+    content: "\1F50D"; 
     font-size: 18px;
 }
 
