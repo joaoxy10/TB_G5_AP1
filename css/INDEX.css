@@ -1,0 +1,289 @@
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais do header */
+header {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ícone de menu (as três linhas) */
+header img[alt="logo"] {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 25px;
+    height: auto;
+}
+
+/* Círculo do avatar */
+header::before{
+    content: "";
+    width: 120px;
+    height: 120px;
+    background-color: #7070f8; /* tom roxo azulado */
+    border-radius: 50%;
+    display: block;
+    margin-top: 20px;
+    position: relative;
+}
+
+
+
+/* Nome do mercado escondido (não aparece na imagem) */
+header h1 {
+    display: none;
+}
+
+/* reset básico */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Inter, Arial, sans-serif; }
+html, body { height: 100%; background: #ffffff; }
+
+/* layout geral */
+header { height: 140px; background: #ffffff; display: flex; align-items: center; justify-content: center; position: relative; }
+/* ícone do menu (logo no HTML é usado como ícone) */
+header img[alt="logo"]{ position: absolute; left: 14px; top: 14px; width: 26px; height: 26px; }
+
+/* centraliza o conteúdo principal na página */
+main {
+  width: 92%;
+  max-width: 380px;
+  margin: 18px auto;
+  padding-bottom: 36px;
+}
+
+/* cada section vira um "card" com grid: 1fr (conteúdo) 72px (bloco verde) */
+main section{
+  display: grid;
+  grid-template-columns: 1fr 72px;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(90deg, rgba(242,250,246,1) 0%, rgba(245,249,247,1) 60%);
+  border-radius: 10px;
+  padding: 12px 12px;
+  margin: 18px 0;
+  box-shadow: 0 6px 18px rgba(18, 24, 31, 0.06);
+  border: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  overflow: visible;
+}
+
+/* força h2 e p a ficarem na primeira coluna (lado esquerdo, empilhados) */
+main section h2,
+main section p{
+  grid-column: 1 / 2;
+  margin: 0;
+}
+
+/* estilo do título (h2) */
+main section h2{
+  font-size: 14px;
+  font-weight: 700;
+  color: #0b2b22;
+  display: inline-block;
+  align-items: center;
+  line-height: 1;
+  margin-bottom: 6px;
+  /* cria espaço suficiente para o "círculo" visual */
+  padding-left: 8px;
+}
+
+/* transforma a primeira letra do h2 em um círculo verde com letra centralizada */
+main section h2::first-letter{
+  content: initial;
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2EE82E;
+  color: #033b20;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  margin-right: 12px;
+  vertical-align: middle;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.06) inset;
+}
+
+/* subtítulo/descritivo (p) */
+main section p{
+  font-size: 12px;
+  color: #475057;
+  opacity: 0.95;
+}
+
+/* bloco verde à direita (simula o retângulo da imagem) */
+main section::after{
+  content: "";
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-self: stretch;
+  width: 72px;
+  height: calc(100% - 0px);
+  background: #2EE82E;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 6px 18px rgba(46,232,46,0.08);
+}
+
+/* efeito de relevo sutil como na imagem */
+main section { border-left: 1px solid rgba(0,0,0,0.02); }
+
+/* espaçamento e tipografia fina */
+main section h2, main section p { padding-right: 6px; }
+
+/* responsividade para telas pequenas */
+@media (max-width: 360px){
+  main { max-width: 340px; }
+  main section{ grid-template-columns: 1fr 64px; padding: 10px; }
+  main section::after{ width: 64px; }
+  main section h2::first-letter{ width: 32px; height: 32px; font-size: 12px; margin-right: 10px; }
+}
+
+/* se quiser esconder o header <h1> (se incômodo), descomente:
+header h1{ display:none; }
+*/
+/* ---------- SIDEBAR (sem alterar o HTML) ---------- */
+aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 220px;                /* ajustável */
+  background: #49d76a;         /* tom verde parecido com a imagem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14px;
+  z-index: 1200;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+  overflow: auto;
+}
+
+/* avatar grande no topo (criado por CSS; não precisa de elemento no HTML) */
+aside::before{
+  content: "";
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #5f6bf2;         /* roxo/azulado do mock */
+  display: block;
+  margin-top: 12px;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.12);
+  position: relative;
+}
+
+/* "boneco" preto dentro do círculo (contorno simples com bordas) */
+aside::after{
+  /* mostra o nome e o traço separador numa só pseudo */
+  content: "\A Empório Almeida";
+  white-space: pre;            /* respeita \A -> nova linha */
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 700;
+  color: #07321b;              /* texto escuro */
+  font-size: 13px;
+  line-height: 1.1;
+  width: 100%;
+  padding-bottom: 12px;
+}
+
+/* desenhando o "boneco" (cabeça/ombros) usando pseudo-objetos adicionais
+   - só para dar o mesmo look da imagem */
+aside .fake-user-head,
+aside .fake-user-body { display:none; } /* fallback (não existe no HTML) */
+
+/* separador fino sob o nome (aplicado ao primeiro item do menu -> cria a linha visual) */
+aside p:first-of-type {
+  margin-top: 12px;
+  padding-top: 12px; /* distância do topo/nome */
+  border-top: 2px solid rgba(0,0,0,0.08);
+}
+
+/* lista de itens (cada <p>) */
+aside p {
+  width: 100%;
+  margin: 12px 0;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* link ocupa todo o p — melhor clique */
+aside p > a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ícones (as imagens dentro dos links) */
+aside p img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: none; /* mantém o SVG original — se estiver preto, ótimo */
+}
+
+/* texto à direita do ícone — inserido via pseudo (não muda HTML) */
+aside p:nth-of-type(1)::after { /* menu/topo - se quiser sem label, deixe vazio */
+  content: "";
+}
+aside p:nth-of-type(2)::after {
+  content: "Estoque";
+}
+aside p:nth-of-type(3)::after {
+  content: "Financeiro";
+}
+aside p:nth-of-type(4)::after {
+  content: "Informações";
+}
+
+/* estilo do texto inserido (pseudo) */
+aside p::after{
+  font-weight: 700;
+  color: #052816;       /* tom escuro legível sobre o verde claro */
+  font-size: 14px;
+  margin-left: 6px;
+  /* posicionamento visual — o pseudo fica ao final de cada <p>, mas como o <a> ocupa tudo,
+     o efeito visual é o mesmo (ícone + texto). */
+}
+
+/* Hover / feedback */
+aside p:hover {
+  background: rgba(0,0,0,0.03);
+  transform: translateX(2px);
+  transition: all .12s ease;
+}
+
+/* delimitação do menu (ícones maiores + espaçamento como imagem) */
+aside p > a img {
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.06));
+}
+
+/* responsividade - reduz a barra em telas muito pequenas */
+@media (max-width:420px){
+  aside { width: 180px; }
+  aside::before { width: 90px; height: 90px; }
+  aside::after { font-size: 12px; }
+  aside p img { width: 26px; height: 26px; }
+  aside p::after { font-size: 13px; }
+}

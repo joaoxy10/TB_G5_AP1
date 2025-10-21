@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
-/* Header geral */
+
 header {
     width: 100%;
     border-radius: 10px;
@@ -14,29 +14,29 @@ header {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Fundo branco da parte superior */
+
 header {
     background-color: white;
     position: relative;
     text-align: center;
     padding-top: 15px;
-    padding-bottom: 60px; /* espaço pra barra verde */
+    padding-bottom: 60px; 
 }
 
-/* Título ESTOQUE */
+
 header h1 {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-/* Parágrafos originais somem visualmente */
+
 header p {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #2EE82E;
+    background-color: #06D806;
     color: black;
     font-size: 15px;
     display: flex;
@@ -45,28 +45,28 @@ header p {
     padding: 10px 15px;
 }
 
-/* Ícone de menu (hambúrguer) */
+
 header p::before {
     content: "\2630"; /* ☰ */
     font-size: 18px;
 }
 
-/* Ícone de lupa */
+
 header p::after {
     content: "\1F50D"; /* 🔍 */
     font-size: 18px;
 }
 
-/* Esconde o texto e elementos extras dentro do <p> */
+/* 
 header p em,
 header p input,
 header p a {
     display: none;
-}
+} */
 
-/* ===== BODY E LAYOUT GERAL ===== */
+
 body {
-    background-color: #fff9ff; /* fundo rosado bem claro */
+    background-color: #ffffff; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,20 +75,20 @@ body {
     padding: 0;
 }
 
-/* Remove qualquer espaçamento esquisito do main */
+
 main {
     width: 80%;
     margin-top: 20px;
 }
 
-/* ===== LISTA DE ITENS ===== */
+
 main ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Cada item da lista */
+
 main ul li {
     display: flex;
     align-items: center;
@@ -97,10 +97,10 @@ main ul li {
     color: #222;
 }
 
-/* ===== CÍRCULO VERDE COM UNIDADES ===== */
+
 main ul li::before {
-    content: attr(data-qtd) "u"; /* adiciona número da quantidade (via CSS) */
-    background-color: #2EE82E;
+    content: attr(data-qtd) "u";
+    background-color: #06D806;
     color: white;
     border-radius: 50%;
     width: 35px;
@@ -112,7 +112,110 @@ main ul li::before {
     margin-right: 10px;
 }
 
-/* ===== APARÊNCIA DO ASIDE ===== */
+
 aside {
-    display: none; /* some com a barra lateral se não for usada aqui */
+    display: none; 
+}
+
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Inter, Arial, sans-serif; }
+html, body { height: 100%; background: #ffffff; }
+
+
+header { height: 140px; background: #ffffff; display: flex; align-items: center; justify-content: center; position: relative; }
+
+header img[alt="logo"]{ position: absolute; left: 14px; top: 14px; width: 26px; height: 26px; }
+
+
+main {
+  width: 92%;
+  max-width: 380px;
+  margin: 18px auto;
+  padding-bottom: 36px;
+}
+
+
+main section{
+  display: grid;
+  grid-template-columns: 1fr 72px;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(90deg, rgba(242,250,246,1) 0%, rgba(245,249,247,1) 60%);
+  border-radius: 10px;
+  padding: 12px 12px;
+  margin: 18px 0;
+  box-shadow: 0 6px 18px rgba(18, 24, 31, 0.06);
+  border: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  overflow: visible;
+}
+
+
+main section h2,
+main section p{
+  grid-column: 1 / 2;
+  margin: 0;
+}
+
+main section h2{
+  font-size: 14px;
+  font-weight: 700;
+  color: #0b2b22;
+  display: inline-block;
+  line-height: 1;
+  margin-bottom: 6px;
+  
+  padding-left: 8px;
+}
+
+
+main section h2::first-letter{
+  content: initial;
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #2EE82E;
+  color: #033b20;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  margin-right: 12px;
+  vertical-align: middle;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.06) inset;
+}
+
+
+main section p{
+  font-size: 12px;
+  color: #475057;
+  opacity: 0.95;
+}
+
+
+main section::after{
+  content: "";
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-self: stretch;
+  width: 72px;
+  height: calc(100% - 0px);
+  background: #2EE82E;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 6px 18px rgba(46,232,46,0.08);
+}
+
+
+main section { border-left: 1px solid rgba(0,0,0,0.02); }
+
+
+main section h2, main section p { padding-right: 6px; }
+
+@media (max-width: 360px){
+  main { max-width: 340px; }
+  main section{ grid-template-columns: 1fr 64px; padding: 10px; }
+  main section::after{ width: 64px; }
+  main section h2::first-letter{ width: 32px; height: 32px; font-size: 12px; margin-right: 10px; }
 }
