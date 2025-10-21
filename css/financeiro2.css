@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +11,6 @@ body {
   line-height: 1.6;
 }
 
-/* Header Styles */
 header {
   background-color: #fff;
   padding: 1rem 1.5rem;
@@ -27,7 +25,6 @@ header h1 {
   text-align: center;
 }
 
-/* Sidebar Styles */
 aside {
   position: fixed;
   left: 0;
@@ -69,14 +66,12 @@ aside img {
   object-fit: contain;
 }
 
-/* Main Content Styles */
 main {
   margin-left: 4rem;
   padding: 1.5rem;
   max-width: 50rem;
 }
 
-/* Style the month heading as a green search bar */
 main h2 {
   background-color: #4caf50;
   color: #fff;
@@ -99,7 +94,6 @@ main h2::after {
   font-size: 1.125rem;
 }
 
-/* Style each paragraph as a card with green accent bar */
 main p {
   background-color: #fff;
   padding: 1.25rem 1.5rem;
@@ -113,7 +107,6 @@ main p {
   color: #333;
 }
 
-/* Add green accent bar on the right side of each card */
 main p::after {
   content: "";
   position: absolute;
@@ -130,7 +123,6 @@ main p:hover {
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.12);
 }
 
-/* Responsive Design */
 @media (max-width: 48rem) {
   aside {
     width: 3.5rem;
