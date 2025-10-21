@@ -7,27 +7,65 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  line-height: 1.6;
-  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  line-height: 1.5;
+  max-width: 23.4375rem; /* 375px mobile width */
+  margin: 0 auto;
+  position: relative;
 }
 
-/* Sidebar Navigation */
-aside {
+/* Header Styles */
+header {
+  background-color: #ffffff;
+  border-bottom: 0.125rem solid #0066cc;
+  padding: 1rem;
+  position: relative;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.75rem; /* Status bar area */
+  background-color: #ffffff;
+  border-bottom: 0.0625rem solid #e0e0e0;
+}
+
+header h1 {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 2.75rem;
+  margin-bottom: 1.5rem;
+  color: #000000;
+}
+
+header h2 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0.5rem 0;
+  color: #000000;
+}
+
+/* Navigation Sidebar */
+nav {
   position: fixed;
   left: 0;
-  top: 0;
-  width: 4rem;
-  height: 100vh;
-  background-color: #fff;
-  border-right: 0.0625rem solid #e0e0e0;
+  top: 4.5rem;
+  width: 3.5rem;
+  background-color: transparent;
+  z-index: 100;
+}
+
+aside {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 1rem 0;
-  gap: 1.5rem;
-  z-index: 100;
+  gap: 0.5rem;
+  padding: 0.5rem;
 }
 
 aside p {
@@ -35,16 +73,12 @@ aside p {
 }
 
 aside a {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  transition: transform 0.2s ease;
-}
-
-aside a:hover {
-  transform: scale(1.1);
 }
 
 aside img {
@@ -53,70 +87,47 @@ aside img {
   object-fit: contain;
 }
 
-/* Header */
-header {
-  position: fixed;
-  top: 0;
-  left: 4rem;
-  right: 0;
-  background-color: #fff;
-  border-bottom: 0.0625rem solid #e0e0e0;
-  padding: 1rem 1.5rem;
-  z-index: 50;
+/* Main Content Area */
+main {
+  padding: 1rem;
+  margin-left: 3.5rem;
 }
 
-header h1 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-header h2 {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #666;
-  margin: 0.25rem 0;
-}
-
-/* Main Content */
-body {
-  padding-left: 4rem;
-  padding-top: 7rem;
-}
-
-/* Custos Section with Badge */
-body::before {
-  content: "";
-  display: block;
-  margin: 1.5rem auto 1rem;
-  width: calc(100% - 3rem);
-  max-width: 50rem;
-}
-
-body > *:first-of-type:not(header):not(nav) {
-  margin-top: 1.5rem;
-}
-
-/* Create a container for the badge and title */
-.custos-header {
+/* Avatar Section */
+.avatar-section {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 1.5rem auto 1.5rem;
-  padding: 0 1.5rem;
-  max-width: 50rem;
+  padding: 1rem 0;
+  border-bottom: 0.0625rem solid #e0e0e0;
 }
 
-/* Pie Chart Container */
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #4caf50;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.avatar-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Chart Section */
 .chart-container {
-  background-color: #fff;
-  border: 0.125rem solid #e0e0e0;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 0.0625rem solid #e0e0e0;
   border-radius: 0.5rem;
-  padding: 1.5rem;
-  margin: 1.5rem auto;
-  max-width: 50rem;
-  width: calc(100% - 3rem);
+  background-color: #ffffff;
 }
 
 .chart-container img {
@@ -125,131 +136,52 @@ body > *:first-of-type:not(header):not(nav) {
   display: block;
 }
 
-/* Analysis Section */
-.analysis-section {
-  margin: 2rem auto;
-  padding: 0 1.5rem;
-  max-width: 50rem;
+/* Content Section */
+.content-section {
+  margin: 1.5rem 0;
 }
 
-.analysis-section h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #333;
+.content-section h3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 
-.analysis-section p {
-  font-size: 0.9375rem;
-  color: #666;
+.content-section p {
+  font-size: 0.875rem;
+  color: #666666;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
-/* Voltar Button */
-.voltar-button {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background-color: #fff;
-  color: #4caf50;
+/* Button Styles */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2rem 0;
+}
+
+.btn-voltar {
+  padding: 0.625rem 1.875rem;
   border: 0.125rem solid #4caf50;
-  border-radius: 2rem;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
+  border-radius: 1.25rem;
+  background-color: #ffffff;
+  color: #4caf50;
+  font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
 }
 
-.voltar-button:hover {
+.btn-voltar:hover {
   background-color: #4caf50;
-  color: #fff;
-  transform: translateY(-0.125rem);
-  box-shadow: 0 0.25rem 0.5rem rgba(76, 175, 80, 0.3);
+  color: #ffffff;
 }
 
-/* Responsive Design */
-@media (max-width: 48rem) {
-  aside {
-    width: 3.5rem;
-  }
-
-  header {
-    left: 3.5rem;
-    padding: 0.875rem 1rem;
-  }
-
-  header h1 {
-    font-size: 1rem;
-  }
-
-  header h2 {
-    font-size: 0.8125rem;
-  }
-
+/* Responsive adjustments */
+@media (max-width: 23.4375rem) {
   body {
-    padding-left: 3.5rem;
-    padding-top: 6.5rem;
-  }
-
-  .chart-container,
-  .analysis-section {
-    width: calc(100% - 2rem);
-    padding: 1rem;
-  }
-
-  .voltar-button {
-    bottom: 1.5rem;
-    right: 1.5rem;
-    padding: 0.625rem 1.5rem;
-    font-size: 0.9375rem;
-  }
-}
-
-@media (max-width: 30rem) {
-  aside {
-    width: 3rem;
-  }
-
-  header {
-    left: 3rem;
-    padding: 0.75rem 0.875rem;
-  }
-
-  header h1 {
-    font-size: 0.9375rem;
-  }
-
-  header h2 {
-    font-size: 0.75rem;
-  }
-
-  body {
-    padding-left: 3rem;
-    padding-top: 6rem;
-  }
-
-  .chart-container,
-  .analysis-section {
-    width: calc(100% - 1.5rem);
-    padding: 0.875rem;
-  }
-
-  .analysis-section h3 {
-    font-size: 1.125rem;
-  }
-
-  .analysis-section p {
-    font-size: 0.875rem;
-  }
-
-  .voltar-button {
-    bottom: 1rem;
-    right: 1rem;
-    padding: 0.5rem 1.25rem;
-    font-size: 0.875rem;
+    max-width: 100%;
   }
 }
