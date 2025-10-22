@@ -180,10 +180,10 @@ main {
 
 .back-button {
   padding: 0.625rem 2rem;
-  border: 0.125rem solid #4caf50;
+  border: 0.125rem solid #27972F;
   border-radius: 1.5rem;
   background-color: #ffffff;
-  color: #4caf50;
+  color: #27972F;
   font-size: 0.9375rem;
   font-weight: 500;
   cursor: pointer;
@@ -194,7 +194,7 @@ main {
 }
 
 .back-button:hover {
-  background-color: #4caf50;
+  background-color: #27972F;
   color: #ffffff;
 }
 

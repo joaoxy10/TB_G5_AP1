@@ -6,14 +6,14 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #ffffff;
+  color: #000000;
   line-height: 1.6;
 }
 
 header {
-  background-color: white;
-  border-bottom: 0.0625rem solid #e0e0e0;
+  background-color: #ffffff;
+  border-bottom: 0.0625rem solid #ffffff;
   padding: 1rem 1.5rem;
 }
 
@@ -30,7 +30,7 @@ header > p:first-of-type {
 }
 
 header > p:last-of-type {
-  background-color: #00d000;
+  background-color: #27972F;
   padding: 0.875rem 1rem;
   border-radius: 0.25rem;
   display: flex;
@@ -41,7 +41,7 @@ header > p:last-of-type {
 
 header > p:last-of-type em {
   font-style: normal;
-  color: white;
+  color: #ffffff;
   font-weight: 500;
   font-size: 0.9375rem;
 }
@@ -50,17 +50,17 @@ header input[type="text"] {
   flex: 1;
   border: none;
   background: transparent;
-  color: white;
+  color: #ffffff;
   font-size: 0.9375rem;
   outline: none;
 }
 
 header input[type="text"]::placeholder {
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
 }
 
 header > p:last-of-type a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   font-size: 1.25rem;
   display: flex;
@@ -78,8 +78,8 @@ aside {
   top: 7.5rem; /* Updated */
   width: 4rem;
   height: calc(100vh - 7.5rem); /* Updated */
-  background-color: white;
-  border-right: 0.0625rem solid #e0e0e0;
+  background-color: #ffffff;
+  border-right: 0.0625rem solid #ffffff;
   display: flex;
   flex-direction: column;
   padding: 1rem 0;
@@ -114,7 +114,7 @@ main::before {
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: #000000;
 }
 
 main ul {
@@ -139,8 +139,8 @@ main li::before {
   justify-content: center;
   width: 2.75rem;
   height: 2.75rem;
-  background-color: #00d000;
-  color: white;
+  background-color: #27972F;
+  color: #ffffff;
   border-radius: 50%;
   font-weight: 600;
   font-size: 0.875rem;
@@ -169,7 +169,7 @@ main li:nth-child(5)::before {
 
 main li {
   font-size: 0.9375rem;
-  color: #333;
+  color: #000000;
 }
 
 @media (max-width: 48rem) {
