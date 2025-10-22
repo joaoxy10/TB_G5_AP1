@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: 'Roboto Flex', sans-serif;
   background-color: #ffffff;
   color: #000000;
   line-height: 1.6;
@@ -20,6 +20,7 @@ header {
 }
 
 header h1 {
+  font-family: 'Noto Sans', sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -151,6 +152,7 @@ main li:hover {
 
 
 main li::before {
+  font-family: 'Noto Sans', sans-serif;
   content: attr(data-month);
   display: flex;
   align-items: center;
@@ -195,6 +197,7 @@ main li::after {
   }
 
   main li::before {
+    font-family: 'Noto Sans', sans-serif;
     width: 2.25rem;
     height: 2.25rem;
     font-size: 0.6875rem;
