@@ -24,6 +24,7 @@ header {
   align-items: center;
   gap: 1rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+  margin-left: 4rem;
 }
 
 header img {
@@ -45,29 +46,44 @@ header h1 em {
 nav {
   grid-area: nav;
   background: #27972F;
-  width: 15rem;
+  width: 4rem;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
   padding: 1rem 0;
+  z-index: 100;
 }
 
 aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 4rem;
+  height: 100vh;
+  background-color: #27972F;
+  border-right: 0.0625rem solid #27972F;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  padding: 1rem 0;
+  gap: 1rem;
+  z-index: 100;
 }
 
 aside p {
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 aside a {
   display: flex;
   align-items: center;
-  padding: 1rem 1.5rem;
-  text-decoration: none;
-  color: #000;
-  font-weight: 500;
-  font-size: 1rem;
+  justify-content: center;
+  padding: 0.75rem;
   transition: background-color 0.2s ease;
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
 }
 
 aside a:hover {
@@ -76,13 +92,14 @@ aside a:hover {
 }
 
 aside img {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 1rem;
-  filter: none;
+  width: 1.5rem;
+  height: 1.5rem;
   object-fit: contain;
-  background: transparent;
-  display: block;
+}
+
+/* keep text hidden at all times to match Estoque1 icon-only design */
+aside span {
+  display: none;
 }
 
 main {
@@ -92,6 +109,7 @@ main {
   flex-direction: column;
   gap: 1.5rem;
   max-width: 50rem;
+  margin-left: 4rem;
 }
 
 section {
